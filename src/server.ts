@@ -13,5 +13,5 @@ async function bootstrap() {
     errorLogger.error('Fail to connection database!', err)
   }
 }
-// git push test
+
 bootstrap()
