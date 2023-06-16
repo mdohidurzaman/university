@@ -1,15 +1,15 @@
 {
-    "keep": {
-        "days": true,
-        "amount": 14
-    },
-    "auditLog": "E:\\TypeScript\\univercity\\logs\\winston\\errors\\.6b7108063d5ff320342393d6471baf832e5cd661-audit.json",
-    "files": [
-        {
-            "date": 1686320675361,
-            "name": "E:\\TypeScript\\univercity\\logs\\winston\\errors\\2023-06-09-20-error.log",
-            "hash": "cc6d7405f2f60abb8b4777aec4d0c4569dac19272ba81b175c9840dea824b4bc"
-        }
-    ],
-    "hashType": "sha256"
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "E:\\TypeScript\\univercity\\logs\\winston\\errors\\.6b7108063d5ff320342393d6471baf832e5cd661-audit.json",
+  "files": [
+    {
+      "date": 1686320675361,
+      "name": "E:\\TypeScript\\univercity\\logs\\winston\\errors\\2023-06-09-20-error.log",
+      "hash": "cc6d7405f2f60abb8b4777aec4d0c4569dac19272ba81b175c9840dea824b4bc"
+    }
+  ],
+  "hashType": "sha256"
 }
