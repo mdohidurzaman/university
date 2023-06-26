@@ -59,8 +59,8 @@ const errorLogger = createLogger({
       ),
       datePattern: 'YYYY-MM-DD-HH',
       zippedArchive: true,
-      maxSize: '20m',
-      maxFiles: '14d',
+      maxSize: '1m',
+      maxFiles: '1d',
     }),
   ],
 })

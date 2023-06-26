@@ -1,7 +1,7 @@
 import express, { Application } from 'express'
 import cors from 'cors'
 const app: Application = express()
-import usersRouter from './app/modules/users/users.route'
+import { UserRoutes } from './app/modules/users/user.route'
 import globalErrorHandler from './app/middleware/globalErrorHandler'
 
 app.use(cors())
@@ -10,12 +10,11 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-app.use('/api/v1/users', usersRouter)
+app.use('/api/v1/users', UserRoutes)
 
 //Test api
-// app.get('/', (req: Request, res: Response, next: NextFunction) => {
-//   throw new ApiError(400, 'I am not an error')
-//   next('This is an error')
+// app.get('/', async (req: Request, res: Response, next: NextFunction) => {
+//   Promise.reject(new Error('Unhandle errors reject'))
 // })
 
 //Global Error Handler
