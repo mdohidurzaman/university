@@ -6,29 +6,64 @@
     "auditLog": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\.5a1bb642497f01106c4c7bcbbe20683b1895f3b4-audit.json",
     "files": [
         {
-            "date": 1687833080376,
-            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-27-08-success.log",
-            "hash": "53f7984ae9e095692a03c3e6f546048e1af317e92cdfaa932ec542beb7a3f984"
-        },
-        {
-            "date": 1687835997638,
-            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-27-09-success.log",
-            "hash": "bea528e5c37fec78770c7f40acbb559ee3b2a437d9fcf4fd5d214fd569324f23"
-        },
-        {
-            "date": 1687839073660,
-            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-27-10-success.log",
-            "hash": "372347998fcc90a5b77277b21db62d28a07792a3d2cb5e3e1612c959c0086f20"
-        },
-        {
-            "date": 1687842515239,
-            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-27-11-success.log",
-            "hash": "e67d5622fd683df7841f8e17e2f81960528c0e58ea5d129e1f1ea08d1b52c005"
-        },
-        {
             "date": 1687847736413,
             "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-27-12-success.log",
             "hash": "7c79ad982c4eaaa31266aeaff8ffc090bd77a655b4741fce4e59f61697406758"
+        },
+        {
+            "date": 1687859405433,
+            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-27-15-success.log",
+            "hash": "7870a85a8f8af8f26ebbd726f6a584364d4428c9711636def169f64f36e27882"
+        },
+        {
+            "date": 1687860397987,
+            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-27-16-success.log",
+            "hash": "39b88a612f3d006e54a104a2fa441902cad063fde639ec72cc63910e5702fe07"
+        },
+        {
+            "date": 1687863662002,
+            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-27-17-success.log",
+            "hash": "371b2212206fe57d2a1102c157f64bc4a2420c576237754670713225cc3614a2"
+        },
+        {
+            "date": 1687881032607,
+            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-27-21-success.log",
+            "hash": "61c235f9585be61fc889fb28b6ed86df3322fd75d52d9146e825295699ef96fa"
+        },
+        {
+            "date": 1687881798065,
+            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-27-22-success.log",
+            "hash": "850685cfc3df50c99fce0a43a9e7e052157d753b73dc70b955d1dda5eab67afa"
+        },
+        {
+            "date": 1687886096889,
+            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-27-23-success.log",
+            "hash": "03c207f6d4e218d97b67a72c032a409afc0fbaee35889a477fd4e25b1c8b283c"
+        },
+        {
+            "date": 1687920308174,
+            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-28-08-success.log",
+            "hash": "0a2890ef3b3a9d70fb968e631471e85a482e1b3e9919fcb4d78e5b84162e1f9f"
+        },
+        {
+            "date": 1687922645972,
+            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-28-09-success.log",
+            "hash": "86430dfbf43f2e558ac26e8193337fbdf78f02511033842556ee9597054fa44f"
+        },
+        {
+            "date": 1687925747671,
+            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-28-10-success.log",
+            "hash": "47a57c028638571e68df452099826e26640ba12d0b9999d00ec903c34023efe7"
+        },
+        {
+            "date": 1687928733383,
+            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-28-11-success.log",
+            "hash": "abadb904e24a0e2f4948ade4f20a64dba8c6d7551c790d4efe5ac4fc4058caa2"
+        },
+        {
+            "date": 1687932721551,
+            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-28-12-success.log",
+            "hash": "6b971b11a082db4faac6b067c9b9adc4173f094b3dc87aa00e064b574532a084"
         }
     ],
     "hashType": "sha256"

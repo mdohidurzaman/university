@@ -35,3 +35,15 @@ export const academicSemisterTitleCodeMapper: { [key: string]: string } = {
   Summer: '02',
   Fall: '03',
 }
+
+export type IAcademicSemisterFilters = {
+  searchTerm?: string
+}
+
+export const academicSemisterSearchableFields = ['title', 'code', 'year']
+export const academicSemisterFilterableFields = [
+  'searchTerm',
+  'title',
+  'code',
+  'year',
+]
