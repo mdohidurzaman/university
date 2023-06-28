@@ -30,7 +30,7 @@ const getAllSemisters = catchasyne(async (req: Request, res: Response) => {
 
   const paginationOptions = pick(req.query, paginationFields)
 
-  const result = await AcademicSemisterServices.gerAllSemisters(
+  const result = await AcademicSemisterServices.getAllSemisters(
     filters,
     paginationOptions
   )
@@ -44,7 +44,20 @@ const getAllSemisters = catchasyne(async (req: Request, res: Response) => {
   })
 })
 
+const getSingleSemister = catchasyne(async (req: Request, res: Response) => {
+  const id = req.params.id
+  const result = await AcademicSemisterServices.getSingleSemister(id)
+
+  sendResponse<IAcademicSemister>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'A academic semester is retrived.',
+    data: result,
+  })
+})
+
 export const AcademicSemisterController = {
   createdSemister,
   getAllSemisters,
+  getSingleSemister,
 }

@@ -6,11 +6,6 @@
     "auditLog": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\.5a1bb642497f01106c4c7bcbbe20683b1895f3b4-audit.json",
     "files": [
         {
-            "date": 1687847736413,
-            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-27-12-success.log",
-            "hash": "7c79ad982c4eaaa31266aeaff8ffc090bd77a655b4741fce4e59f61697406758"
-        },
-        {
             "date": 1687859405433,
             "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-27-15-success.log",
             "hash": "7870a85a8f8af8f26ebbd726f6a584364d4428c9711636def169f64f36e27882"
@@ -64,6 +59,16 @@
             "date": 1687932721551,
             "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-28-12-success.log",
             "hash": "6b971b11a082db4faac6b067c9b9adc4173f094b3dc87aa00e064b574532a084"
+        },
+        {
+            "date": 1687940761661,
+            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-28-14-success.log",
+            "hash": "02470f57bdc36443b67eff2ae55f00bfb5cd16861902c368718595e85726a3a3"
+        },
+        {
+            "date": 1687942802986,
+            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-28-15-success.log",
+            "hash": "b19fff89bd9255692b742603bf483f0c57160e83cc4eac85b516a19577cd226d"
         }
     ],
     "hashType": "sha256"

@@ -9,6 +9,7 @@ router.post(
   validateRequest(AcademicSemisterValidation.createAcademicSemisterZodSchema),
   AcademicSemisterController.createdSemister
 )
+router.get('/:id', AcademicSemisterController.getSingleSemister)
 router.get('/', AcademicSemisterController.getAllSemisters)
 
 export const AcademicSemisterRoutes = router

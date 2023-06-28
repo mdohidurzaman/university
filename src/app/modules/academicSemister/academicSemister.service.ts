@@ -22,7 +22,7 @@ const createSemister = async (
   return result
 }
 
-const gerAllSemisters = async (
+const getAllSemisters = async (
   filters: IAcademicSemisterFilters,
   paginationOptions: IPaginationOptions
 ): Promise<IGenericResponse<IAcademicSemister[]>> => {
@@ -82,7 +82,9 @@ const gerAllSemisters = async (
     sortCondition[sortBy] = sortOrder
   }
 
-  const result = await AcademicSemister.find({ $and: andConditions })
+  const whereCondition = andConditions.length > 0 ? { $and: andConditions } : {}
+
+  const result = await AcademicSemister.find(whereCondition)
     .sort(sortCondition)
     .skip(skip)
     .limit(limit)
@@ -99,7 +101,15 @@ const gerAllSemisters = async (
   }
 }
 
+const getSingleSemister = async (
+  id: string
+): Promise<IAcademicSemister | null> => {
+  const result = await AcademicSemister.findById(id)
+  return result
+}
+
 export const AcademicSemisterServices = {
   createSemister,
-  gerAllSemisters,
+  getAllSemisters,
+  getSingleSemister,
 }
