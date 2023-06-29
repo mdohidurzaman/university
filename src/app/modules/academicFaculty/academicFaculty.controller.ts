@@ -1,12 +1,12 @@
 import { Request, Response, NextFunction } from 'express'
-import { AcademicSemisterServices } from './academicSemister.service'
+import { AcademicSemisterServices } from './academicFaculty.service'
 import catchasyne from '../../../shared/catchasyne'
 import sendResponse from '../../../shared/sendResponse'
 import httpStatus from 'http-status'
-import { IAcademicSemister } from './academicSemister.interface'
+import { IAcademicSemister } from './academicFaculty.interface'
 import pick from '../../../shared/pick'
 import { paginationFields } from '../../../constant/pagination'
-import { academicSemisterFilterableFields } from './academicSemister.constant'
+import { academicSemisterFilterableFields } from './academicFaculty.constant'
 
 const createdSemister = catchasyne(
   async (req: Request, res: Response, next: NextFunction) => {

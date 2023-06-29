@@ -4,9 +4,9 @@ import {
   IAcademicSemisterFilters,
   academicSemisterSearchableFields,
   academicSemisterTitleCodeMapper,
-} from './academicSemister.constant'
-import { IAcademicSemister } from './academicSemister.interface'
-import { AcademicSemister } from './academicSemister.model'
+} from './academicFaculty.constant'
+import { IAcademicSemister } from './academicFaculty.interface'
+import { AcademicSemister } from './academicFaculty.model'
 import { IPaginationOptions } from '../../../interface/pagination'
 import { IGenericResponse } from '../../../interface/common'
 import { paginationHelpers } from '../../../helpers/paginationHelper'

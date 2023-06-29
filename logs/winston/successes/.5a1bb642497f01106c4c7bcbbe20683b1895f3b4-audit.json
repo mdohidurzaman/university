@@ -6,31 +6,6 @@
     "auditLog": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\.5a1bb642497f01106c4c7bcbbe20683b1895f3b4-audit.json",
     "files": [
         {
-            "date": 1687859405433,
-            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-27-15-success.log",
-            "hash": "7870a85a8f8af8f26ebbd726f6a584364d4428c9711636def169f64f36e27882"
-        },
-        {
-            "date": 1687860397987,
-            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-27-16-success.log",
-            "hash": "39b88a612f3d006e54a104a2fa441902cad063fde639ec72cc63910e5702fe07"
-        },
-        {
-            "date": 1687863662002,
-            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-27-17-success.log",
-            "hash": "371b2212206fe57d2a1102c157f64bc4a2420c576237754670713225cc3614a2"
-        },
-        {
-            "date": 1687881032607,
-            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-27-21-success.log",
-            "hash": "61c235f9585be61fc889fb28b6ed86df3322fd75d52d9146e825295699ef96fa"
-        },
-        {
-            "date": 1687881798065,
-            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-27-22-success.log",
-            "hash": "850685cfc3df50c99fce0a43a9e7e052157d753b73dc70b955d1dda5eab67afa"
-        },
-        {
             "date": 1687886096889,
             "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-27-23-success.log",
             "hash": "03c207f6d4e218d97b67a72c032a409afc0fbaee35889a477fd4e25b1c8b283c"
@@ -69,6 +44,36 @@
             "date": 1687942802986,
             "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-28-15-success.log",
             "hash": "b19fff89bd9255692b742603bf483f0c57160e83cc4eac85b516a19577cd226d"
+        },
+        {
+            "date": 1687947078718,
+            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-28-16-success.log",
+            "hash": "8d3428f7e67999048c7e09686a84811fbcd510fb3f104e7431ebf0e65a9913bf"
+        },
+        {
+            "date": 1687950494492,
+            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-28-17-success.log",
+            "hash": "cf7a14e9dd9868a318de07f78ab9a2e967a94b21c5082d038cd547711dd26181"
+        },
+        {
+            "date": 1687953790937,
+            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-28-18-success.log",
+            "hash": "8363aa6759e45b8c32d67ee68a628e788a367fc760c0dc68092c6f13424a0f4b"
+        },
+        {
+            "date": 1687963394784,
+            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-28-20-success.log",
+            "hash": "47f9f958f2b201196e6b9d4ce3b6394e3a15103e67bb34714d3fcd6c6c80e3d7"
+        },
+        {
+            "date": 1687964416457,
+            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-28-21-success.log",
+            "hash": "435b5e69fcd2cf7a164d0c15a8d6e6e0272d4f075b1918269aa328c196981a46"
+        },
+        {
+            "date": 1687969604769,
+            "name": "E:\\TypeScript\\univercity\\logs\\winston\\successes\\2023-06-28-22-success.log",
+            "hash": "6e1d597c16841a0b99fdb78706038978e86bc3148cc5feac0efe6aacdaa7cb68"
         }
     ],
     "hashType": "sha256"

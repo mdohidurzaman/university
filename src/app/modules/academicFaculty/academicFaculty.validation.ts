@@ -3,7 +3,7 @@ import {
   academicSemisterCodes,
   academicSemisterMonth,
   academicSemisterTitles,
-} from './academicSemister.constant'
+} from './academicFaculty.constant'
 
 const createAcademicSemisterZodSchema = z.object({
   body: z.object({
