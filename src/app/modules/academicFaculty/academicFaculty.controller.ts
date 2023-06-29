@@ -1,90 +1,87 @@
-import { Request, Response, NextFunction } from 'express'
-import { AcademicSemisterServices } from './academicFaculty.service'
+import { Request, Response } from 'express'
+import { AcademicFacultyServices } from './academicFaculty.service'
 import catchasyne from '../../../shared/catchasyne'
 import sendResponse from '../../../shared/sendResponse'
 import httpStatus from 'http-status'
-import { IAcademicSemister } from './academicFaculty.interface'
 import pick from '../../../shared/pick'
 import { paginationFields } from '../../../constant/pagination'
-import { academicSemisterFilterableFields } from './academicFaculty.constant'
+import { academicFacultyFilterableFields } from './academicFaculty.constant'
+import { IAcademicFaculty } from './academicFaculty.interface'
 
-const createdSemister = catchasyne(
-  async (req: Request, res: Response, next: NextFunction) => {
-    const { ...academicSemisterData } = req.body
-    const result = await AcademicSemisterServices.createSemister(
-      academicSemisterData
-    )
-    next()
+const createFaculty = catchasyne(async (req: Request, res: Response) => {
+  const { ...academicFacultyData } = req.body
+  const result = await AcademicFacultyServices.createFaculty(
+    academicFacultyData
+  )
 
-    sendResponse(res, {
-      statusCode: httpStatus.OK,
-      success: true,
-      message: 'Academic semester has created successfully.',
-      data: result,
-    })
-  }
-)
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Faculty has been created successfully.',
+    data: result,
+  })
+})
 
-const getAllSemisters = catchasyne(async (req: Request, res: Response) => {
-  const filters = pick(req.query, academicSemisterFilterableFields)
+const getAllFaculties = catchasyne(async (req: Request, res: Response) => {
+  const filters = pick(req.query, academicFacultyFilterableFields)
 
   const paginationOptions = pick(req.query, paginationFields)
 
-  const result = await AcademicSemisterServices.getAllSemisters(
+  const result = await AcademicFacultyServices.getAllFaculties(
     filters,
     paginationOptions
   )
 
-  sendResponse<IAcademicSemister[]>(res, {
+  sendResponse<IAcademicFaculty[]>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'All academic semester are retrived.',
+    message: 'All faculties have retrived.',
     meta: result.meta,
     data: result.data,
   })
 })
 
-const getSingleSemister = catchasyne(async (req: Request, res: Response) => {
+const getSingleFaculty = catchasyne(async (req: Request, res: Response) => {
   const id = req.params.id
-  const result = await AcademicSemisterServices.getSingleSemister(id)
+  const result = await AcademicFacultyServices.getSingleFaculty(id)
 
-  sendResponse<IAcademicSemister>(res, {
+  sendResponse<IAcademicFaculty>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'A academic semester is retrived.',
+    message: 'A faculty has retrived.',
     data: result,
   })
 })
 
-const updateSemister = catchasyne(async (req: Request, res: Response) => {
+const updateFaculty = catchasyne(async (req: Request, res: Response) => {
   const id = req.params.id
   const updatedData = req.body
-  const result = await AcademicSemisterServices.updateSemister(id, updatedData)
+  const result = await AcademicFacultyServices.updateFaculty(id, updatedData)
 
-  sendResponse<IAcademicSemister>(res, {
+  sendResponse<IAcademicFaculty>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Academic semester is successfully updated.',
+    message: 'A faculty has been successfully updated.',
     data: result,
   })
 })
 
-const deleteSemister = catchasyne(async (req: Request, res: Response) => {
+const deleteFaculty = catchasyne(async (req: Request, res: Response) => {
   const id = req.params.id
-  const result = await AcademicSemisterServices.deleteSemister(id)
+  const result = await AcademicFacultyServices.deleteFaculty(id)
 
-  sendResponse<IAcademicSemister>(res, {
+  sendResponse<IAcademicFaculty>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Academic semester is successfully deleted.',
+    message: 'A faculty has successfully deleted.',
     data: result,
   })
 })
 
-export const AcademicSemisterController = {
-  createdSemister,
-  getAllSemisters,
-  getSingleSemister,
-  updateSemister,
-  deleteSemister,
+export const AcademicFacultyController = {
+  createFaculty,
+  getAllFaculties,
+  getSingleFaculty,
+  updateFaculty,
+  deleteFaculty,
 }

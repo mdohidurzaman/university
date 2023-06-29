@@ -1,31 +1,25 @@
-import ApiError from '../../../errors/ApiError'
-import httpStatus from 'http-status'
-import {
-  IAcademicSemisterFilters,
-  academicSemisterSearchableFields,
-  academicSemisterTitleCodeMapper,
-} from './academicFaculty.constant'
-import { IAcademicSemister } from './academicFaculty.interface'
-import { AcademicSemister } from './academicFaculty.model'
 import { IPaginationOptions } from '../../../interface/pagination'
 import { IGenericResponse } from '../../../interface/common'
 import { paginationHelpers } from '../../../helpers/paginationHelper'
 import { SortOrder } from 'mongoose'
+import {
+  IAcademicFaculty,
+  IAcademicFacultyFilters,
+} from './academicFaculty.interface'
+import { AcademicFaculty } from './academicFaculty.model'
+import { academicFacultySearchableFields } from './academicFaculty.constant'
 
-const createSemister = async (
-  payload: IAcademicSemister
-): Promise<IAcademicSemister> => {
-  if (academicSemisterTitleCodeMapper[payload.title] !== payload.code) {
-    throw new ApiError(httpStatus.BAD_REQUEST, 'Invalid semester code!', '')
-  }
-  const result = await AcademicSemister.create(payload)
+const createFaculty = async (
+  payload: IAcademicFaculty
+): Promise<IAcademicFaculty> => {
+  const result = await AcademicFaculty.create(payload)
   return result
 }
 
-const getAllSemisters = async (
-  filters: IAcademicSemisterFilters,
+const getAllFaculties = async (
+  filters: IAcademicFacultyFilters,
   paginationOptions: IPaginationOptions
-): Promise<IGenericResponse<IAcademicSemister[]>> => {
+): Promise<IGenericResponse<IAcademicFaculty[]>> => {
   const { searchTerm, ...filtersData } = filters
 
   const andConditions = []
@@ -33,7 +27,7 @@ const getAllSemisters = async (
   //search data
   if (searchTerm) {
     andConditions.push({
-      $or: academicSemisterSearchableFields.map(field => ({
+      $or: academicFacultySearchableFields.map(field => ({
         [field]: {
           $regex: searchTerm,
           $options: 'i',
@@ -84,12 +78,12 @@ const getAllSemisters = async (
 
   const whereCondition = andConditions.length > 0 ? { $and: andConditions } : {}
 
-  const result = await AcademicSemister.find(whereCondition)
+  const result = await AcademicFaculty.find(whereCondition)
     .sort(sortCondition)
     .skip(skip)
     .limit(limit)
 
-  const total = await AcademicSemister.countDocuments()
+  const total = await AcademicFaculty.countDocuments()
 
   return {
     meta: {
@@ -101,40 +95,31 @@ const getAllSemisters = async (
   }
 }
 
-const getSingleSemister = async (
+const getSingleFaculty = async (
   id: string
-): Promise<IAcademicSemister | null> => {
-  const result = await AcademicSemister.findById(id)
+): Promise<IAcademicFaculty | null> => {
+  const result = await AcademicFaculty.findById(id)
   return result
 }
 
-const updateSemister = async (
+const updateFaculty = async (
   id: string,
-  payload: Partial<IAcademicSemister>
-): Promise<IAcademicSemister | null> => {
-  if (
-    payload.title &&
-    payload.code &&
-    academicSemisterTitleCodeMapper[payload.title] !== payload.code
-  ) {
-    throw new ApiError(httpStatus.BAD_REQUEST, 'Invalid semester code!', '')
-  }
-  const result = await AcademicSemister.findOneAndUpdate({ _id: id }, payload, {
+  payload: Partial<IAcademicFaculty>
+): Promise<IAcademicFaculty | null> => {
+  const result = await AcademicFaculty.findOneAndUpdate({ _id: id }, payload, {
     new: true,
   })
   return result
 }
 
-const deleteSemister = async (
-  id: string
-): Promise<IAcademicSemister | null> => {
-  const result = await AcademicSemister.findByIdAndDelete(id)
+const deleteFaculty = async (id: string): Promise<IAcademicFaculty | null> => {
+  const result = await AcademicFaculty.findByIdAndDelete(id)
   return result
 }
-export const AcademicSemisterServices = {
-  createSemister,
-  getAllSemisters,
-  getSingleSemister,
-  updateSemister,
-  deleteSemister,
+export const AcademicFacultyServices = {
+  createFaculty,
+  getAllFaculties,
+  getSingleFaculty,
+  updateFaculty,
+  deleteFaculty,
 }

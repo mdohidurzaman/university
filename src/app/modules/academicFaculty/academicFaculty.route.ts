@@ -1,21 +1,22 @@
 import express from 'express'
 import validateRequest from '../../middleware/validateRequest'
-import { AcademicSemisterValidation } from './academicFaculty.validation'
-import { AcademicSemisterController } from './academicFaculty.controller'
+
+import { AcademicFacultyValidation } from './academicFaculty.validation'
+import { AcademicFacultyController } from './academicFaculty.controller'
 const router = express.Router()
 
 router.post(
-  '/create-semester',
-  validateRequest(AcademicSemisterValidation.createAcademicSemisterZodSchema),
-  AcademicSemisterController.createdSemister
+  '/create-faculty',
+  validateRequest(AcademicFacultyValidation.createAcademicFacultyZodSchema),
+  AcademicFacultyController.createFaculty
 )
-router.get('/:id', AcademicSemisterController.getSingleSemister)
-router.get('/', AcademicSemisterController.getAllSemisters)
+router.get('/:id', AcademicFacultyController.getSingleFaculty)
+router.get('/', AcademicFacultyController.getAllFaculties)
 router.patch(
   '/:id',
-  validateRequest(AcademicSemisterValidation.updateAcademicSemisterZodSchema),
-  AcademicSemisterController.updateSemister
+  validateRequest(AcademicFacultyValidation.updateAcademicFacultyZodSchema),
+  AcademicFacultyController.updateFaculty
 )
-router.delete('/:id', AcademicSemisterController.deleteSemister)
+router.delete('/:id', AcademicFacultyController.deleteFaculty)
 
-export const AcademicSemisterRoutes = router
+export const AcademicFacultyRoutes = router
