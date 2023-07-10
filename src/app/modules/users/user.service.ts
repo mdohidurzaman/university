@@ -1,22 +1,34 @@
-import config from '../../../config'
-import ApiError from '../../../errors/ApiError'
 import { IUser } from './user.interface'
 import { User } from './user.model'
-import { generateUserId } from './user.utils'
 
-const createUser = async (user: IUser): Promise<IUser | null> => {
-  //auto generated increamental id
-  const id = await generateUserId()
-  user.id = id
-  //default password
-  if (!user.password) {
-    user.password = config.default_user_password as string
-  }
-  const createdUser = await User.create(user)
-  if (!createdUser) {
-    throw new ApiError(400, 'Fail to create the user.', '')
-  }
-  return createdUser
+const getAllUsers = async (): Promise<IUser[] | null> => {
+  const result = await User.find()
+  return result
 }
 
-export const UserService = { createUser }
+const getSingleUser = async (id: string): Promise<IUser | null> => {
+  const result = await User.findById(id)
+  return result
+}
+
+const updateUser = async (
+  id: string,
+  payload: Partial<IUser>
+): Promise<IUser | null> => {
+  const result = await User.findOneAndUpdate({ _id: id }, payload, {
+    new: true,
+  })
+  return result
+}
+
+const deleteUser = async (id: string): Promise<IUser | null> => {
+  const result = await User.findByIdAndDelete(id)
+  return result
+}
+
+export const UserService = {
+  getAllUsers,
+  getSingleUser,
+  updateUser,
+  deleteUser,
+}

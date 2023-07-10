@@ -1,42 +1,24 @@
-import { Server } from 'http'
+/* eslint-disable no-console */
 import mongoose from 'mongoose'
-import config from './config/index'
 import app from './app'
-import { errorLogger, infoLogger } from './shared/logger'
+import config from './config/index'
 
-process.on('uncaughtException', error => {
-  errorLogger.error(error)
-  process.exit(1)
-})
-
-let server: Server
-
-async function bootstrap() {
+//Database connection
+async function DBconnection() {
   try {
     await mongoose.connect(config.database_url as string)
     app.listen(config.port, () => {
-      infoLogger.info(`App is running on port ${config.port}`)
+      console.log(`App is running on port ${config.port}`)
     })
+    console.log('Database connection successful!')
   } catch (err) {
-    errorLogger.error('Fail to connection database!', err)
+    console.log('Database connection fail', err)
   }
-  process.on('unhandledRejection', error => {
-    if (server) {
-      server.close(() => {
-        errorLogger.error(error)
-        process.exit(1)
-      })
-    } else {
-      process.exit(1)
-    }
-  })
 }
 
-bootstrap()
+DBconnection()
 
-process.on('SIGTERM', () => {
-  infoLogger.info('SIGTERM is received')
-  if (server) {
-    server.close()
-  }
-})
+// app.listen(config.port, () => {
+//   DBconnection()
+//   console.log(`Assignment3 app running on port ${config.port}`)
+// })

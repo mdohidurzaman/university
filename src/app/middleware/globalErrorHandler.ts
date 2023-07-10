@@ -1,20 +1,25 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 /* eslint-disable no-unused-expressions */
-import { ErrorRequestHandler } from 'express'
+import { ErrorRequestHandler, Request, Response, NextFunction } from 'express'
 import config from '../../config'
 import { IGenericErrorMessage } from '../../interface/error'
 import handleValidationError from '../../errors/handleValicationError'
 import ApiError from '../../errors/ApiError'
-import { errorLogger } from '../../shared/logger'
 import { ZodError } from 'zod'
 import handleZodError from '../../errors/handleZodError'
 import handleCastError from '../../errors/handleCastError'
 
-const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
+const globalErrorHandler: ErrorRequestHandler = (
+  error,
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   config.env === 'development'
     ? console.log('globalErrorHandler', error)
-    : errorLogger.error('globalErrorHandler', error)
+    : undefined
 
   let statusCode = 500
   let message = 'Something went wrong!'
@@ -64,7 +69,6 @@ const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
     errorMessages,
     stack: config.env !== 'production' ? error?.stack : undefined,
   })
-  next()
 }
 
 export default globalErrorHandler
